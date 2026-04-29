@@ -215,11 +215,109 @@
 
 // 15.padlindrome
 
-function palindrome(a){
-    const result=a.split('').reverse().join('')
-    return result
-}
+// function palindrome(a){
+//     const result=a.split('').reverse().join('')
+//     return result
+// }
 
-const result=palindrome("madameee")
+// const result=palindrome("madameee")
 
-console.log(result);
+// console.log(result);
+
+
+
+// 16.remove the duplicate in string
+
+
+
+// const string="Helllo"
+
+// let result=""
+
+// for(let i=0;i<string.length;i++){
+//     if(!result.includes(string[i])){
+//         result+=string[i]
+//     }
+// }
+
+// console.log(result)
+
+
+//17. shallow copy and deep copy
+
+
+//shallow copy 
+
+// const obj={
+//     name:"king",
+//     address:{
+//         city:"chennai"
+//     }
+// }
+
+// const result={...obj}
+// result.address.city="Delhi"
+
+// console.log(obj.address.city);
+
+
+
+//deep copy
+
+// const final={
+//     name:"virat",
+//     address:{
+//         city:"Delhi"
+//     }
+// }
+
+// const main=JSON.parse(JSON.stringify(final))
+// main.address.city="Bangalore"
+
+// console.log(final.address.city);
+
+
+
+
+
+//18 separate the string and number
+
+ 
+// const combine=[1,"hey",3,5,"heko","heiii",33]
+
+// const str=[];
+// const number=[];
+
+
+// for(let i=0;i<combine.length;i++){
+//     if(typeof combine[i]==="string"){
+//         str.push(combine[i])
+//     }
+//     else{
+//         number.push(combine[i])
+//     }
+// }
+
+
+// console.log(str);
+// console.log(number);
+
+
+
+//19 swap
+
+let a=300;
+let b=200;
+
+
+
+a=a+b; //500
+
+b=a-b; //300
+
+a=a-b //200
+
+console.log(a,b);
+
+
+
