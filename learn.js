@@ -306,18 +306,86 @@
 
 //19 swap
 
-let a=300;
-let b=200;
+// let a=300;
+// let b=200;
 
 
 
-a=a+b; //500
+// a=a+b; //500
 
-b=a-b; //300
+// b=a-b; //300
 
-a=a-b //200
+// a=a-b //200
 
-console.log(a,b);
+// console.log(a,b);
 
 
 
+//20.find the longest sentences in string
+
+
+// function find(a){
+
+//     let longest="";
+//     const result=a.split(' ');
+
+//     result.forEach(b=>{
+//         if(b.length>longest.length){
+//             longest=b
+
+//         }
+        
+//     })
+//     return longest
+// }
+
+
+// const main_result=find("hello everybody and welcome to todAYS MATCH")
+
+// console.log(main_result);
+
+
+
+//21.find small sentences 
+
+// function small(a){
+//     let result=a.split(' ')[0]
+
+//     const result_main= a.split(' ')
+
+//     result_main.forEach(b=>{
+//         if(b.length<result.length){
+//             result=b
+//         }
+//     })
+//     return result
+// }
+
+// const main_result=small("hello everybody and welcome to todAYS MATCH")
+// console.log(main_result)
+
+
+
+//22. for loop and while loop do while
+
+// for(let i=0;i<9;i++){
+//     console.log(i);
+    
+// }
+
+
+// let i=0;
+// while(i<5){
+//     console.log(i);
+//     i++
+    
+// }
+
+
+
+// let i=0;
+
+// do{
+//     console.log(i)
+//     i++
+// }while(i<5)
