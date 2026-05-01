@@ -66,26 +66,112 @@
 // export default App
 
 
+//useref
+// import React, { useRef } from 'react'
 
-import React, { useRef } from 'react'
+// const App = () => {
+//   const heyy=useRef(0);
 
-const App = () => {
-  const heyy=useRef(0);
-
-  const change=()=>{
-    heyy.current++;
-    console.log(heyy.current);
+//   const change=()=>{
+//     heyy.current++;
+//     console.log(heyy.current);
     
-  }
+//   }
 
 
 
 
-  return (
-    <div>
-      <button onClick={change}>click here</button>
+//   return (
+//     <div>
+//       <button onClick={change}>click here</button>
       
-    </div>
+//     </div>
+//   )
+// }
+//  export default App
+
+
+
+//
+
+
+// import React from 'react'
+// import { useState } from 'react'
+
+// function App(){
+//   const [count, setCount] = useState(0);
+
+//   const expensive = () => {
+//     console.log("Calculating...");
+//     return count * 2;
+//   };
+
+//   return (
+//     <>
+//       <h1>{expensive()}</h1>
+//       <button onClick={()=>setCount(count+1)}>Click</button>
+//     </>
+//   );
+// }
+
+// export default App
+// import React from 'react'
+// import { useCallback } from 'react';
+// import { useState } from 'react'
+
+
+// function App(){
+//   const [count, setCount] = useState(0);
+
+//  const change=useCallback(()=>{
+//   console.log("parent click");
+  
+//  },[])
+
+//   return (
+//     <>
+//     <Child onclick={change} />
+
+//     <button onClick={()=>setCount(count+1)} >Count</button>
+//    {count}
+//     </>
+//   );
+// }
+// export default App
+
+
+// const Child=React.memo(({onclick})=>{
+//   console.log("child");
+//   return <button onClick={onclick}>Clicked</button>
+  
+// })
+
+import React from "react";
+import { useContext } from "react";
+import { createContext } from "react";
+
+
+const Data=createContext();
+
+
+function App(){
+
+  const value="king"
+
+
+  return(
+    <Data.Provider value={value}>
+      <Child />
+    </Data.Provider>
   )
 }
- export default App
+
+
+function Child(){
+  const Use=useContext(Data)
+
+  return <h1>{Use}</h1>
+}
+
+export default App
+

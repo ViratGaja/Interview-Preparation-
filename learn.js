@@ -389,3 +389,37 @@
 //     console.log(i)
 //     i++
 // }while(i<5)
+
+
+
+// function hello(a,b){
+
+//     if(a.length !=b.length){
+//         return false
+//     }
+
+
+//     for(let i=0;i<a.length;i++){
+//         if(a[i]!=b[i]){
+//             return false
+//         }
+       
+//     }
+
+    
+//  return true
+// }
+
+
+// const result=hello("heyye","heyyd")
+// console.log(result)
+
+
+
+
+for(var i=0;i<4;i++){
+    setTimeout(()=>{
+        console.log(i);
+        
+    },1000)
+}
