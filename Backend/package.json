@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon curd.js",
+    "start": "nodemon learn.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
