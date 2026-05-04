@@ -417,9 +417,33 @@
 
 
 
-for(var i=0;i<4;i++){
-    setTimeout(()=>{
-        console.log(i);
+// for(var i=0;i<4;i++){
+//     setTimeout(()=>{
+//         console.log(i);
         
-    },1000)
-}
+//     },1000)
+// }
+
+
+
+
+
+// function hello(item){
+//     const result=item.filter((a,b)=>item.indexOf(a)!==b);
+//     return result
+
+// }
+
+// const result=hello([1,2,2,3,4,4])
+// console.log(result)
+
+
+
+const arr = [1, 2, 2, 3, 4, 4, 4];
+
+const result=arr.reduce((acc,cur)=>{
+    acc[cur]=(acc[cur]||0)+1
+    return acc
+},{})
+
+console.log(result);
