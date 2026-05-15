@@ -229,3 +229,82 @@
 // }
 
 // console.log(main);
+
+
+
+
+// const arr = [1, 2, [3, 4], [5, 6]];
+
+
+
+// let result=[];
+
+
+// for(let i=0;i<arr.length;i++){
+//     if(Array.isArray(arr[i])){
+//         result.push(...arr[i])
+//     }
+//     else{
+//         result.push(arr[i])
+//     }
+// }
+
+// console.log(result);
+
+
+
+// const  arr = [28, 'king', 'hi', 47];
+
+
+// let string=[];
+// let number=[];
+
+
+// for(let i=0;i<arr.length;i++){
+
+//     if(typeof(arr[i])==="string"){
+//         string.push(arr[i])
+//     }
+//     else{
+//         number.push(arr[i])
+//     }
+// }
+// console.log(string);
+// console.log(number);
+
+
+// function debounce(fn,delay){
+//     let timer;
+//     return function(){
+//         clearTimeout(timer);
+//         timer=setTimeout(()=>{
+//             fn()
+//         },delay)
+        
+//     }
+// }
+
+// function fn(){
+//     console.log("hello");
+    
+// }
+
+// const result=(debounce(fn,3000));
+// result()
+
+
+// let result = [80, 50, 40, 70];
+
+// let array=[]
+// for(let i=0;i<result.length;i++){
+//     for(j=i+1;j<result.length;j++){
+//         if (result[i]+result[j]===90){
+//             array.push(i,j)
+//         }
+//     }
+// }
+
+
+// console.log(array);
+
+
