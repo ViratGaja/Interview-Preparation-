@@ -481,3 +481,49 @@
 
 // console.log(string);
 // console.log(number);
+
+
+
+
+    //23. find the index and add the value
+
+
+    // const result=[20,50,40,70]
+
+
+    // for(let i=0;i<result.length;i++){
+    //     for(let j=i+1;j<result.length;j++){
+    //         if(result[i]+result[j]===70){
+    //             console.log(result[i],result[j]);
+                
+    //         }
+    //     }
+    // }
+
+
+
+
+    //24. 0 move to last index
+
+
+    const array=[2,3,0,0,3,4]
+
+    let result=[];
+
+
+    for(let i=0;i<array.length;i++){
+        if(array[i]!==0){
+            result.push(array[i])
+        }
+    }
+
+    while(result.length<array.length){
+        result.push(0)
+    }
+
+
+    console.log(result);
+    
+
+
+
