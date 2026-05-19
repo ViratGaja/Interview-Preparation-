@@ -371,6 +371,14 @@
 // const result=debounce(fn,3000)
 // result()
 
+// splice() is used to add, remove, or replace elements in an array.
+
+// Syntax
+// array.splice(start, deleteCount, item1, item2...)
+// Parameter	Meaning
+// start	Starting index
+// deleteCount	How many elements remove
+// item1...	Optional new elements
 
 
 
@@ -579,7 +587,19 @@
 
 
 
+// 26. remove duplicate in string using loop
 
+
+// const array="hello";
+
+// let result="";
+
+// for(let i=0;i<array.length;i++){
+//     if(!result.includes(array[i])){
+//         result+=array[i]
+//     }
+// }
+// console.log(result);
 
 
 
