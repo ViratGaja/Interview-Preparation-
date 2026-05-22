@@ -34,10 +34,16 @@
 // })
 
 
-const express = require("express");
 
-const app = express();
+const express=require("express");
 
-app.listen(3000, () => {
+const app=express();
+
+app.get(('/',(req,res)=>{
+    res.send("Hello")
+}))
+
+app.listen((5000,(req,res)=>{
     console.log("Backend is running");
-});
+    
+}))
