@@ -1,16 +1,16 @@
-
 const express = require("express");
 const mongoose = require("mongoose")
+
 const app = express();
+
 
 app.use(express.json())
 
-const result = [];
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/learn').
-    then(() => {
-        console.log("DB Running");
+mongoose.connect('mongodb://127.0.0.1:27017/learn')
+    .then(() => {
+        console.log("DB Connected");
 
     })
     .catch((err) => {
@@ -19,124 +19,125 @@ mongoose.connect('mongodb://127.0.0.1:27017/learn').
     })
 
 
+const UserSchema = new mongoose.Schema({
+    name: String,
+    age: Number
+})
+
+const User = mongoose.model("user", UserSchema)
 
 
 
 
 
-app.post('/users', (req, res) => {
-    result.push(req.body);
-    res.json(result)
+app.post('/users', async (req, res) => {
+    try {
+        const user = new User({
+            name: req.body.name,
+            age: req.body.age
+        })
+
+        const saveUser = await user.save();
+
+        res.status(201).json({
+            message: "User Created",
+            data: saveUser
+        })
+
+    }
+    catch (err) {
+        res.status(500).json({
+            message: err.message
+        })
+    }
+})
+
+
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users)
+    }
+    catch (err) {
+        res.status(500).json({
+            message: err.message
+        })
+    }
+
 })
 
 
 
-app.get("/all_users", (req, res) => {
-    res.json(result)
+
+app.get('/users/:id', async (req, res) => {
+    try {
+        const result = await User.findById(req.params.id);
+        if (!result) {
+            res.status(404).json({
+                message: "User is Not FOund"
+            })
+        }
+        res.json(result)
+    }
+    catch (err) {
+        res.status(500).json({
+            message: err.message
+        })
+    }
+})
+
+
+
+app.put('/users/:id',async(req,res)=>{
+    try{
+        const user=await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
+
+        if(!user){
+            res.status(404).json({
+                message:"not updated"
+            })
+        }
+
+        res.status(200).json({
+            message:"update",
+            data:user
+        })
+    }
+    catch(err){
+        res.status(500).json({
+            message:err.message
+        })
+    }
+})
+
+
+
+app.delete('/users/:id',async(req,res)=>{
+    try{
+
+        const deleteUser=await User.findByIdAndDelete(req.params.id);
+        if(!deleteUser){
+            res.status(404).json({
+                message:"not delete"
+            })
+        }
+
+        res.status(200).json({
+            message:"deleted"
+        })
+
+    }
+    catch(err){
+        res.status(500).json({
+            message:err.message
+        })
+    }
 })
 
 
 
 
-app.put('/all_users/:id', (req, res) => {
-    const id = req.params.id;
-    result[id] = req.body;
-    res.json(result[id])
+app.listen(5000, () => {
+    console.log("backend is running");
 
 })
-
-
-app.delete('/all_users/:id', (req, res) => {
-    const id = req.params.id;
-    result.splice(id, 1)
-    res.send("Delete Successfully")
-})
-
-
-
-
-app.listen(5000, (req, res) => {
-    console.log("backend running");
-
-})
-
-
-
-// const mongoose=require("mongoose");
-
-
-// const DB=new mongoose.Schema({
-//     name:String,
-//     age:Number
-
-// })
-
-// const User=mongoose.model("user",DB);
-
-// module.exports=User
-
-
-
-// app.post('/users', async (req, res) => {
-//     try {
-//         const User = new User(req.body);
-//         await User.save();
-//         res.json(User)
-//     }
-//     catch(err){
-//         res.status(500).json({
-//             message:`err.message`
-//         })
-//     }
-   
-// })
-
-// app.get('/users',async(req,res)=>{
-//     const all = await User.find();
-//     res.json(all)
-// })
-
-
-
-// 
-// const jwt=require("jsonwebtoken");
-
-
-// const token=jwt.sign(
-//     {id:1},
-//     "secretkey",
-//     {expiresIn:"1h"}
-// )
-
-// console.log(token);
-
-
-// const auth=(req,res,err,next)=>{
-//     console.log("middle ware is running");
-//     next()
-// }
-
-
-
-// app.use(auth)
-
-
-
-// app.get('/dashboad',auth,(req,res)=>{
-//     console.log("product router");
-    
-// })
-
-
-// app.get("/test",async(req,res)=>{
-//     try{
-//         const number=32423;
-//         const result=await (number.toString());
-//         console.log(result);
-        
-//     }
-//     catch(err){
-//         console.log(err);
-        
-//     }
-// })
