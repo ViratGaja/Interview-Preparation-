@@ -127,7 +127,7 @@
 //     }
 //     return result
 
-    
+
 // }
 
 // console.log(count("hello"));
@@ -233,7 +233,7 @@
 
 // function fn(){
 //     console.log("Hello");
-    
+
 // }
 
 // const result=debounce(fn,2000);
@@ -288,7 +288,7 @@
 
 // function hello(name,age){
 //     console.log(`${this.name} ${name} ${age}`);
-    
+
 // }
 
 // const obj={
@@ -348,7 +348,7 @@
 //         main_result.push(a)
 //     }
 
-   
+
 //  }
 
 //   while(main_result.length<array.length){
@@ -363,30 +363,26 @@
 
 //bobble sorting
 
+const array = [1, 2, 3, 4];
 
 
-// const array=[1,2,3,4];
+for (let i = 0; i < array.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < array.length; j++) {
+        if (array[j] > array[i]) {
+            min = j;
+        }
+    }
+
+    let temp = array[i];
+    array[i] = array[min];
+    array[min] = temp
+
+}
+
+console.log(array);
 
 
-// for(let i=0;i<array.length;i++){
-//    let min=i;
-//    for(let j=i+1;j<array.length;j++){
-//     if(array[j]>array[i]){
-//         min=j;
-//     }
-
-
-//    }
-
-//    let temp=array[i];
-//    array[i]=array[min];
-//    array[min]=temp
-
-// }
-
-// console.log(array);
-
- 
 
 
 
