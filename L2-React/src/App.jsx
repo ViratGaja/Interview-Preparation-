@@ -1,95 +1,61 @@
-import React from 'react'
-import { use } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [edit, setEdit] = useState(null);
-  const [search, setSearch] = useState("");
-
-
-  useEffect(()=>{
-    try{
-      const user=localStorage.getItem("user")
-      if(user){
-        setData(JSON.parse(user))
-      }
-    }
-    catch(err){
-      console.log(err);
-      
-    }
-  },[])
-
-  useEffect(()=>{
-    localStorage.setItem("users",JSON.stringify(data))
-  },[data])
-
-
-  const handleForm = (e) => {
-    e.preventDefault();
-    console.log("clicked");
-
-    if (edit) {
-      const main_result = data.map(a => a.id === edit ? { ...a, name, age } : a)
-      setData(main_result);
-      setEdit(null)
-
-    }
-    else {
-
-      setData([...data, { id: Date.now(), name, age }])
-
-    }
-
-
-
-    setName("")
-    setAge("")
-  }
-
-
-  const handleRemove = (id) => {
-    const result = data.filter(a => a.id !== id);
-    setData(result)
-  }
-
-
-  const handleEdit = (item) => {
-    setEdit(item.id);
-    setName(item.name);
-    setAge(item.age)
-  }
-
-  const filter = data.filter((a) => {
-    const result = a.name.toUpperCase().includes(search.toUpperCase());
-    const result_1 = a.age.toUpperCase().includes(search.toUpperCase());
-    return result || result_1
+  const[formData,setFormData]=useState({
+    name:"",
+    email:"",
+    password:""
   })
+  const [error,setError]=useState({})
 
+  const handleForm=(e)=>{
+    setFormData({
+      ...formData,
+      [e.target.name]:e.target.value
+    })
+  }
 
+  const submitForm=(e)=>{
+    e.preventDefault();
 
+    let newError={};
+
+    if(formData.name===""){
+      newError.name="Name field is required"
+    }
+    if(formData.email===""){
+      newError.email="Email field is required"
+    }
+    else if(!formData.email.includes("@")){
+      newError.email="enter the valid email"
+    }
+     if (formData.password === "") {
+      newError.password = "Password is required"
+     }
+     else if(formData.password.length<6){
+      newError.password="password must be 6 character"
+     }
+
+     setError(newError)
+
+     if(Object.keys(newError).length===0){
+      alert("submit Success")
+     }
+
+  }
   return (
     <div>
 
-      <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Search.....' />
-
-      <form onSubmit={handleForm}>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
-        <input type="text" value={age} onChange={((e) => setAge(e.target.value))} placeholder="Age" />
-        <button type='submit'>{edit ? "update" : "Submit"}</button>
+      <form>
+        <input type="text" value={formData.name} onChange={handleForm} placeholder='name' name="name" id="" />
+        {error.name &&<p style={{color:"red"}}>{error.name}</p>}<br /> <br />
+        
+        <input type="email" value={formData.email} onChange={handleForm} placeholder='email' name="email" id="" />
+        {error.name &&<p style={{color:"red"}}>{error.email}</p>}<br /> <br />
+        <input type="password"value={formData.password} onChange={handleForm} placeholder='password' name="password" id="" />
+        {error.name &&<p style={{color:"red"}}>{error.password}</p>}<br /> <br />
+        <button onClick={submitForm}>Submit</button>
       </form>
-
-
-      {filter.map((a) => (
-        <h1 key={a.id}>{a.name} and {a.age} <button onClick={() => handleRemove(a.id)}>delete</button><button onClick={() => handleEdit(a)}>edit</button></h1>
-      ))}
-
-
-
 
 
     </div>
