@@ -5,69 +5,50 @@ const app = express();
 
 app.use(express.json())
 
-const todo = []
 
-//post
-app.post('/todo', (req, res) => {
-    const { title } = req.body;
+const register=[]
 
-    if (!title) {
-        return res.status(400).json({
-            message: "please enter the title"
-        })
-    }
-    const result = {
-        id: todo.length + 1,
-        title
-    }
-    todo.push(result);
-    res.status(201).json(todo)
-})
+//Register
 
+app.post('/register',(req,res)=>{
+    const {name,email,password}=req.body;
 
-
-
-//get
-app.get('/all',(req,res)=>{
-    res.json(todo)
-})
-
-
-
-//particular value
-app.get('/all/:id',(req,res)=>{
-    const {id}=req.params;
-
-    const todos=todo.find(a=>a.id===Number(id));
-
-    if(!todos){
-        return res.status(400).json({
-            message:"not match"
+    if(!email || !password  || !name){
+        res.status(400).json({
+            message:"please enter the required field"
         })
     }
 
-    res.status(200).json(todos)
+
+    const existing=register.find(u=>u.email===email);
+
+    if(existing){
+        res.status(400).json({
+            message:"Already email is there"
+        })
+    }
+
+
+    const result={
+        id:register.length+1,
+        name,
+        email,
+        password
+    }
+
+    register.push(result);
+
+
+    res.status(200).json({
+        message:"successfully register",
+        result
+    })
+
+
+
 
 })
 
-
-
-//delete
-app.delete('/all/:id',(req,res)=>{
-    const {id}=req.params;
-
-
-    const result=todo.filter(a=>a.id !==Number(id))
-    res.status(200).json(result)
-})
-
-
-//put
-app.put('/all/:id',(req,res)=>{
-    const {id}=req.params;
-    const result=todo.map(a=>a.id===Number(id)?{...a,...req.body}:a);
-    res.status(200).json(result)
-})
 
 
 
