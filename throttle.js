@@ -7,8 +7,9 @@ function throttle(another,delay){
         let current=Date.now();
         if(current-time>=delay){
             another()
+            time=current 
         }
-        time=current
+           
     }
 }
 function another(){
