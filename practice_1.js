@@ -407,23 +407,35 @@
 // }
 
 
-const result=new Promise((resolve,reject)=>{
-    let success=true;
-    if(success){
-        resolve("success")
-    }
+// const result=new Promise((resolve,reject)=>{
+//     let success=true;
+//     if(success){
+//         resolve("success")
+//     }
 
-    else{
-        reject("failure")
-    }
-})
-
-
-result.then((a)=>console.log("successful")
-)
-result.catch((a)=>console.log("errr")
-)
+//     else{
+//         reject("failure")
+//     }
+// })
 
 
-console.log(result);
+// result.then((a)=>console.log("successful")
+// )
+// result.catch((a)=>console.log("errr")
+// )
 
+
+// console.log(result);
+
+
+
+
+// const obj={
+//     name:"king",
+//     greet:function(){
+//         console.log(this.name);
+        
+//     }
+// }
+
+// obj.greet()

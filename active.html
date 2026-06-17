@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dynamic{
+            color:red
+        }
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li class="menu dynamic">hello</li>
+        <li class="menu">hello</li>
+        <li class="menu">hello</li>
+    </ul>
+
+
+
+    <script>
+        let menu=document.querySelectorAll(".menu")
+        menu.forEach((a)=>{
+          a.addEventListener("click",function(){
+
+            menu.forEach((a)=>{
+                a.classList.remove("dynamic")
+            })
+
+            this.classList.add("dynamic")
+
+          })
+        })
+    </script>
+
+
+
+
+
+
+</body>
+</html>

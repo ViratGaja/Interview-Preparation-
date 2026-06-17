@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" id="form" style="display:flex;justify-content:center">
+        <div
+            style="display: flex;justify-content:center;align-items:center;flex-direction:column;gap:20px;height:500px;background-color:aliceblue;width:500px">
+            <div>
+                <label for="">UserName</label>
+                <input type="text" class="name" name="" id="">
+                <span style="color: red;" class="err_name"></span>
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="text" class="email" name="" id="">
+                <span style="color: red;" class="err_email"></span>
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="text" class="password" name="" id="">
+                <span style="color: red;" class="err_password"></span>
+            </div>
+
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var name = document.querySelector('.name').value.trim()
+            var email = document.querySelector('.email').value.trim()
+            var password = document.querySelector('.password').value.trim()
+
+            var err_name = document.querySelector('.err_name')
+            var err_email = document.querySelector('.err_email')
+            var err_password = document.querySelector('.err_password')
+
+
+            err_name.textContent = ""
+            err_email.textContent = ""
+            err_password.textContent = ""
+
+            let validate = true;
+
+            if (name === "") {
+                err_name.textContent = "please enter the Name";
+                validate = false
+            }
+            if (email === "") {
+                err_email.textContent = "please enter the email"
+                validate = false
+            }
+            else if (!email.includes("@")) {
+                err_email.textContent = "please enter the @"
+                validate = false
+            }
+            if (password === "") {
+                err_password.textContent = "please enter the password"
+                validate = false
+            }
+            else if (password.length < 6) {
+                err_password.textContent = "please enter the 6 digit character"
+                validate = false
+            }
+
+            if (validate) {
+                const data = {
+                    name: name,
+                    email: email,
+                    password: password
+                }
+
+                localStorage.setItem("userData", JSON.stringify(data))
+
+
+
+
+
+                alert("Form Successfully Submitted");
+
+            }
+
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>
