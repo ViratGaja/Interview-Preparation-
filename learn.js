@@ -1,692 +1,296 @@
-// Remove Duplicate in Array in build in method
+// 
 
 
-// 1. const array=[1,3,4,3,5,6,2,2,3]
+// let result="hello";
+// let final="";
 
-// const result=[...new Set(array)]
-// console.log(result)
+// for(let i=0;i<result.length;i++){
+//     if(!final.includes(result[i])){
+//         final+=result[i]
+//     }
+// }
+
+// console.log(final);
 
 
-// without built in method
 
+// let result=[1,2,2,3,3,4,4,5];
 
-// 2. const array=[1,2,2,2,3,4,5,5,5,6]
-
-// const result=array.filter((item,index)=>{
-//     return array.indexOf(item)===index
+// let main=result.filter((a,b)=>{
+//     const hello=result.indexOf(a)===b
+//     return hello
 // })
 
-// console.log(result)
-
-
-
-
-// reverse the string
-
-
-// 3. const string="Hello"
-
-// const result= string.split('').reverse().join('')
-
-// console.log(result)
-
-
-// 4. const string="Hello Everybody"
-
-// const result= string.split(' ').map(a=>a.split('').reverse().join('')).join(' ')
-
-// console.log(result)
-
-
-
-//5. const string="Hello"
-
-
-// const final=''
-
-// for(i=string.length-1;i>=0;i--){
-//     final += string[i]
-// }
-
-// console.log(final)
-
-
-
-
-
-// 6.const string="Hello Everything"
-
-
-// let final=''
-
-// for(i=string.length-1;i>=0;i--){
-//     final += string[i]
-// }
-
-// console.log(final)
-
-
-
-
-//7. which two value can add got the result
-
-// let array=[200,400,300,100]
-
-// function result(array){
-// for(let i=0;i<array.length-1;i++){
-//     for(let j=i+1;j<array.length;j++){
-//         if(array[i]+array[j]==700){
-//             return [array[i],array[j]]
-//         }
-//     }
-// }
-// }
-
-// console.log(result(array))
-
-
-
-
-// 8. 1st letter capital
-
-
-// let string="hello"
-
-
-// function capital(a){
-//     return a.charAt(0).toUpperCase()+a.slice(1)
-// }
-
-
-// const result=capital(string)
-
-// console.log(result)
-
-
-
-// 9.anagram
-// function meaning(a,b){
-//     const item=a.split('').sort().join('')
-//     const item_2=b.split('').sort().join('')
-//     return item=== item_2
-// }
-
-// const result= meaning("listen","silent")
-
-
-// console.log(result)
-
-
-// 10.closure
-
-
-// function outer(){
-//     let name="king"
-
-//     return function(){
-//         console.log(name)
-//     }
-// }
-
-// const outer_result=outer()
-// outer_result() 
-
-
-// or
-
-
-// function outer(){
-//     let count=0;
-//     return function(){
-//         count++;
-//         return count
-//     }
-// }
-
-// const main_result=outer()
-// console.log(main_result());
-// console.log(main_result())
-
-
-
-// 11. compare the array
-
-
-// function compare(a,b){
-//     const array=JSON.stringify(a);
-//     const array_1=JSON.stringify(b)
-//     return array===array_1
-// }
-
-
-// const final=compare([1,2,4,3],[1,2,3])
-
-// console.log(final)
-
-
-
-// 12.constructor 
-
-
-// function result(name,age){
-//     this.name=name;
-//     this.age=age
-// }
-
-// const main=new result("king",20)
 // console.log(main);
 
 
-// Odd or even number
+// const	arr	=	[10,	50,	2,	99,	1];
 
-// const arr=[1,3,2,4,5,6]
+// let long=Infinity;
+// let second=Infinity;
 
-// const result=arr.filter(a=>{
-//     if(a%2===0){
-//         console.log("even")
+// for(let a of arr){
+//     if(a<long){
+//         second=long
+//         long=a
 //     }
-//     else{
-//         console.log("odd")
+//     else if (a<second &&a !==long){
+//         second=a
 //     }
-// })
-
-
-
-// 13.factorial
-
-// function main(n){
-//     if(n===0||n===1) return 1
-//     return n *main(n-1)
-// }
-// console.log(main(5));
-
-/* 14.How can you copy an object in JavaScript?*/
-
-// const obj={
-//     name:"king",
-//     age:19
 // }
 
-// const result=obj
+
+// console.log(long);
+// console.log(second);
+
+
+
+// let string="hello every and welcome to today match";
+
+
+// let main=string.split(' ');
+
+// let result=main[0];
+// for(let a of main){
+//     if(a.length<result.length){
+//         result=a
+//     }
+// }
+
+// console.log(result);
+
+
+// const arr="hello";
+
+// let result={
+
+// }
+
+// for(let a of arr){
+//     result[a]=(result[a]||0)+1
+// }
 // console.log(result);
 
 
 
 
-// 15.padlindrome
+// const sum=[3,4,6,2,4];
 
-// function palindrome(a){
-//     const result=a.split('').reverse().join('')
+// let final=0;
+
+// for(let a of sum){
+//     final+=a
+// }
+
+// console.log(final);
+
+
+
+// let a=10;
+// let b=20;
+
+// [a,b]=[b,a]
+
+// console.log(a);
+
+
+// let a=10;
+// let b=20;
+
+// a=a+b;
+// b=a-b;
+// a=a-b
+
+// console.log(a);
+
+
+
+// let	a	=	[1,	2,	[3,	4],	[5,	6,[1,2,3,4,]]];
+
+// function final(item){
+//     let result=[];
+
+//     for(let b of item){
+//         if(Array.isArray(b)){
+//             result.push(...final(b))
+//         }
+//         else{
+//             result.push(b)
+//         }
+//     }
+
 //     return result
 // }
+// console.log(final(a));
 
-// const result=palindrome("madameee")
+
+
+// const	arr	=	[4,	2,	1,	5,	3];
+
+// let result=arr.sort((a,b)=>b-a);
+
+// console.log(result);
+
+// let	string	=	'hello';
+
+// let result=string.charAt(0).toUpperCase()+string.slice(1);
 
 // console.log(result);
 
 
 
-// 16.remove the duplicate in string
 
-
-
-// const string="Helllo"
-
-// let result=""
-
-// for(let i=0;i<string.length;i++){
-//     if(!result.includes(string[i])){
-//         result+=string[i]
+// function debounce(fn,delay){
+//     let timer;
+//     return function(){
+//         clearTimeout(timer);
+//         timer=setTimeout(()=>{
+//             fn()
+//         },delay)
 //     }
 // }
 
-// console.log(result)
+// function hello(){
+//     console.log("hello everybody");
+    
+// }
+
+// const result=debounce(hello,2000);
+// result()
 
 
-//17. shallow copy and deep copy
 
 
-//shallow copy 
 
-// const obj={
-//     name:"king",
-//     address:{
-//         city:"chennai"
+// function throttle(fn,delay){
+//     let time=0;
+//     return function(){
+//         let current=Date.now();
+//         if(current-time>delay){
+//             fn()
+//             time=current
+//         }
 //     }
 // }
 
-// const result={...obj}
-// result.address.city="Delhi"
+// function hello(){
+//     console.log("hello everybody");
+    
+// }
 
-// console.log(obj.address.city);
+// const result=throttle(hello,2000);
+
+// result()
 
 
+// const	array	=	[28,	'king',	'hi',	47,	476];
 
-//deep copy
+// let string=[];
+// let number=[];
 
-// const final={
-//     name:"virat",
-//     address:{
-//         city:"Delhi"
+
+// for(let a of array){
+//     if(typeof(a)==="string"){
+//         string.push(a)
+//     }
+//     else if(typeof(a)==="number"){
+//         number.push(a)
 //     }
 // }
 
-// const main=JSON.parse(JSON.stringify(final))
-// main.address.city="Bangalore"
-
-// console.log(final.address.city);
-
-
-
-
-
-//18 separate the string and number
-
-
-// const combine=[1,"hey",3,5,"heko","heiii",33]
-
-// const str=[];
-// const number=[];
-
-
-// for(let i=0;i<combine.length;i++){
-//     if(typeof combine[i]==="string"){
-//         str.push(combine[i])
-//     }
-//     else{
-//         number.push(combine[i])
-//     }
-// }
-
-
-// console.log(str);
+// console.log(string);
 // console.log(number);
 
 
 
-//19 swap
-
-// let a=300;
-// let b=200;
-
-
-
-// a=a+b; //500
-
-// b=a-b; //300
-
-// a=a-b //200
-
-// console.log(a,b);
-
-
-
-//20.find the longest sentences in string
-
-
-// function find(a){
-
-//     let longest="";
-//     const result=a.split(' ');
-
-//     result.forEach(b=>{
-//         if(b.length>longest.length){
-//             longest=b
-
-//         }
-
-//     })
-//     return longest
-// }
-
-
-// const main_result=find("hello everybody and welcome to todAYS MATCH")
-
-// console.log(main_result);
-
-
-
-//21.find small sentences 
-
-// function small(a){
-//     let result=a.split(' ')[0]
-
-//     const result_main= a.split(' ')
-
-//     result_main.forEach(b=>{
-//         if(b.length<result.length){
-//             result=b
-//         }
-//     })
-//     return result
-// }
-
-// const main_result=small("hello everybody and welcome to todAYS MATCH")
-// console.log(main_result)
-
-
-
-//22. for loop and while loop do while
-
-// for(let i=0;i<9;i++){
-//     console.log(i);
-
-// }
-
-
-// let i=0;
-// while(i<5){
-//     console.log(i);
-//     i++
-
-// }
-
-
-
-// let i=0;
-
-// do{
-//     console.log(i)
-//     i++
-// }while(i<5)
-
-
-
-// function hello(a,b){
-
-//     if(a.length !=b.length){
-//         return false
-//     }
-
-
-//     for(let i=0;i<a.length;i++){
-//         if(a[i]!=b[i]){
-//             return false
-//         }
-
-//     }
-
-
-//  return true
-// }
-
-
-// const result=hello("heyye","heyyd")
-// console.log(result)
-
-
-
-
-// for(var i=0;i<4;i++){
-//     setTimeout(()=>{
-//         console.log(i);
-
-//     },1000)
-// }
-
-
-
-
-
-// function hello(item){
-//     const result=item.filter((a,b)=>item.indexOf(a)!==b);
-//     return result
-
-// }
-
-// const result=hello([1,2,2,3,4,4])
-// console.log(result)
-
-
-
-// const arr = [1, 2, 2, 3, 4, 4, 4];
-
-// const result=arr.reduce((acc,cur)=>{
-//     acc[cur]=(acc[cur]||0)+1
-//     return acc
-// },{})
-
-// console.log(result);
-
-
-
-// function nonRepeat(character){
-//     const count={}
-
-//     for (let item of character){
-//         count[item]=(count[item]||0)+1;
-//     }
-
-//     for (let str of character){
-//         if(count[str]===1){
-//             return str 
+// const	arr	=	[20,	50,	40,	70];
+// let result=[]
+// for(let i=0;i<arr.length;i++){
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]+arr[j]===110){
+//             result.push(i,j)
 //         }
 //     }
-//     return null;
-
-
-
-
-// }
-
-
-// console.log(nonRepeat("a,a,b,b,e,c,c"))
-
-
-
-
-// const array=[1,2,3,4]
-
-
-
-// let result=0;
-
-// for(let i=0;i<array.length;i++){
-//     result+=array[i]
 // }
 
 // console.log(result);
 
 
 
-// const array=[1,2,3,4,5]
+// let arr	=	[2,	3,	0,	0,	3,	4];
 
-// let count=0;
+// let result=[];
 
 
-// for(let num of array){
-//     if(num%2===0){
-//         count++;
-//     }
-// }
-// console.log(count);
-
-
-// function array(a){
-//     const result=a.split(' ').map(b=>b.split('').reverse().join('')).join(' ')
-//     return result
-// }
-// console.log(array("hello every body "));
-
-
-
-// const array=[1,2,3,4]
-
-
-// let reverse=[]
-
-// for(i=array.length-1;i>=0;i--){
-//     reverse.push(array[i])
-// }
-
-
-// console.log(reverse);
-
-
-// const array=[2,3,4,1,5,3]
-
-// let main_result=array[0];
-
-// for(let result of array){
-//     if(result<main_result){
-//         main_result=result
-//     }
-// }
-// console.log(main_result);
-
-
-
-
-
-// const array = [2, 3, 4, 2, 3, 4, 5]
-
-
-
-
-
-
-// const result_1 = array.filter((a, index) => array.indexOf(a) == index)
-
-
-
-// console.log(result_1);
-
-
-
-
-// function palindrome(a){
-//     const result = a.split('').reverse().join('')
-//     return a===result
-// }
-
-// console.log(palindrome("madam"));
-
-
-
-// const array =[2,4,6,3,4,7]
-
-// let result=array[1]
-
-
-// for(let get of array){
-//     if(get>result){
-//         result=get
-//     }
-// }
-
-
-// console.log(result);
-
-
-
-
-// const array=[10,23,25,32]
-
-// let largest=-Infinity;
-// let second=-Infinity;
-
-// for (let a of array){
-//     if(a>largest){
-
-//         second=largest
-//         largest=a
-//     } 
-//     else if (a > second && a !==largest){
-//         {
-//             second=a
-//         }
-//     }
-// }
-
-// console.log(second);
-
-
-// const array=[10,20,30,40]
-
-
-// let smallest=Infinity;
-// let second_small=Infinity
-
-
-// for(let a of array){
-//     if(a<smallest){
-//         second_small=smallest
-//         smallest=a
-//     }
-//     else if(a<second_small&&a !==smallest)
-//     {
-//         second_small=a
-//     }
-// }
-// console.log(second_small);
-
-
-
-
-// const array = [1, 2, 3, 0, 0, 2, 3, 4]
-
-
-// let result = []
-
-
-// for (let a of array) {
-//     if (a !== 0) {
+// for(let a of arr){
+//     if(a!==0){
 //         result.push(a)
-
 //     }
-
 // }
 
-
-// while (result.length < array.length) {
+// while(result.length<arr.length){
 //     result.push(0)
 // }
+
+
 // console.log(result);
 
 
 
-// const array=[1, 3, 4, 2, 5, 3, 2]
+// let missing=[1,2,4];
 
-// const result=array.filter((a,b)=>array.indexOf(a)!==b)
-
-
-// const final=result[0]
-// console.log(final);
-
-
-
-// function anagram(a,b){
-
-//     const result_1=a.split('').sort().join('')
-//     const result_2=b.split('').sort().join('')
-
-//     return result_1===result_2
-
-
-
-
-// }
-// console.log(anagram("silent","listen"));
-
-
-
-
-// const string="Hello I am learning JavaScript"
-
-// let final=string.split(' ')[0];
-
-// const use=string.split(' ')
-
-// for(let a of use){
-//     if(a.length<final.length){
-//         final=a
+// for(let i=1;i<=4;i++){
+//     if(!missing.includes(i)){
+//         console.log(i);
+        
 //     }
 // }
+
+
+
+// let result=[1,3,4];
+
+// let length=result.length+1;
+
+// let formula=(length*(length+1))/2;
+
+// let sum=result.reduce((a,b)=>a+b);
+
+// let final=formula-sum
 // console.log(final);
 
 
 
+// const bubble=[4,2,3,1];
+
+
+// for(let i=0;i<bubble.length;i++){
+//     let min=i
+//     for(let j=i+1;j<bubble.length;j++){
+//         if(bubble[j]<bubble[i]){
+//             min=j
+//         }
+//     }
+
+//     let temp=bubble[i];
+//     bubble[i]=bubble[min];
+//     bubble[min]=temp
+// }
+
+
+// console.log(bubble);
 
 
 
 
+function outer(){
+    let count=0;
+     function inner(){
+        return count++
+    }
+    return inner
+}
+
+const result=outer();
+console.log(result());
+console.log(result());
