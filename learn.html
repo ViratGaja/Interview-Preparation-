@@ -1,98 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
+    
 
-    <div
-        style="width: 600px;margin:0 auto;display:flex;justify-content:center;align-items:center;flex-direction:column">
+    <input type="text" class="name">
+    <input type="text" class="password">
+    <button class="btn">submit</button>
 
-        <h1>Form Validation</h1>
 
-        <form id="form_handle">
-            <input type="text" name="name" class="name" placeholder="Name">
-            <span style="color: red;" class="name_err"></span><br> <br>
-            <input type="email" name="email" class="email" placeholder="Email">
-            <span style="color: red;" class="email_err"></span><br> <br>
-            <input type="password" name="password" class="password" placeholder="password"> <br> <br>
-            <span style="color: red;" class="password_err"></span><br> <br>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
 
 
 
     <script>
-        document.getElementById('form_handle').addEventListener("submit", function (e) {
-            e.preventDefault();
-
-
-            var name = document.querySelector(".name").value.trim();
-            var email = document.querySelector(".email").value.trim()
-            var password = document.querySelector(".password").value.trim();
-
-
-            var name_err = document.querySelector('.name_err')
-            var email_err = document.querySelector('.email_err')
-            var password_err = document.querySelector('.password_err')
-
-            name_err.textContent = ""
-            email_err.textContent = ""
-            password_err.textContent = ""
-
-
-            let success = true;
-
-            if (name === "") {
-                name_err.textContent = "please enter the name field";
-                success = false
+       
+        document.querySelector('.btn').addEventListener('click',function(){
+             var name=document.querySelector('.name').value.trim();
+        var password=document.querySelector('.password').value.trim();
+            if(name==="king" && password==="123"){
+                window.location.href="learn_3.js"
             }
-
-            if (email === "") {
-                email_err.textContent = "please enter the email field";
-                success = false
+            else{
+                window.location.href="/ "
             }
-            else if (!email.includes("@")) {
-                email_err.textContent = "please enter the @";
-                success = false
-            }
-            if (password === "") {
-                password_err.textContent = "please enter the password";
-                success = false
-            }
-            else if (password.length < 6) {
-                password_err.textContent = "please enter the 6 digit number";
-                success = false
-            }
-
-
-            if (success) {
-                const Data = {
-                    name: name,
-                    email: email,
-                    password: password
-                }
-                localStorage.getItem("Data", JSON.stringify(Data));
-                alert("Form submitted successfully");
-                document.querySelector(".name").value = "";
-                document.querySelector(".email").value = "";
-                document.querySelector(".password").value = "";
-            }
-
-
-
-
-
-
-
         })
     </script>
 
-</body>
 
+
+</body>
 </html>
