@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button class="btn">click</button>
+    <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quis similique mollitia odit ducimus dicta sint, aliquid soluta id distinctio quos iste est explicabo blanditiis consectetur perspiciatis doloribus consequuntur suscipit!</p>
+
+
+    <script>
+        var btn=document.querySelector('.btn');
+        var para=document.querySelector('.para');
+
+        btn.addEventListener('click',function(){
+            if(para.style.display==="none"){
+                para.style.display="block"
+            }
+            else{
+                para.style.display="none"
+            }
+        })
+
+
+    </script>
+</body>
+</html>

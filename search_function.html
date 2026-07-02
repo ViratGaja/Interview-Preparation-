@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+
+<input type="text" id="search" placeholder="Search">
+
+<ul id="list">
+    <li>Apple</li>
+    <li>Orange</li>
+    <li>Banana</li>
+    <li>Mango</li>
+</ul>
+
+<script>
+
+const search = document.getElementById("search");
+const items = document.querySelectorAll("#list li");
+
+
+search.addEventListener("keyup",function(){
+    var value=search.value.toLowerCase();
+
+    items.forEach((item)=>{
+        if(item.textContent.toLowerCase().includes(value)){
+            item.style.display="block"
+        }
+        else{
+            item.style.display="none"
+        }
+    })
+})
+
+
+
+
+</script>
+
+</body>
+</html>
