@@ -204,3 +204,35 @@
 
 // console.log(final);
 
+
+
+
+// function final(str){
+//     let letter=str.match(/[a-zA-Z]/g).reverse();
+//     let result='';
+
+//     for(let a of str){
+//         if(/[a-zA-z]/.test(a)){
+//             result+=letter.shift()
+//         }
+//         else{
+//             result+=a
+//         }
+//     }
+//     return result
+
+// }
+
+
+// console.log(final("hel&&lo"));
+
+
+
+// let result=[1,2,4];
+
+// for(let i=1;i<=4;i++){
+//     if(!result.includes(i)){
+//         console.log(i);
+        
+//     }
+// }
